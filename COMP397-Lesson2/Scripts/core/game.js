@@ -5,11 +5,13 @@
 /// <reference path="../typings/tweenjs/tweenjs.d.ts" />
 /// <reference path="../typings/soundjs/soundjs.d.ts" />
 /// <reference path="../typings/preloadjs/preloadjs.d.ts" />
+/// <reference path="../objects/label.ts" />
 // GLOBAL GAME FRAMEWORK VARIABLES
 var canvas;
 var stage;
 // Game Variables
 var helloLabel;
+var goodByeLabel;
 function init() {
     console.log("Game Started...");
     canvas = document.getElementById("canvas"); // reference to canvas element
@@ -24,11 +26,9 @@ function gameLoop(event) {
 }
 // This is where all the fun happens
 function main() {
-    helloLabel = new createjs.Text("Hello World", "60px Consolas", "#000000");
-    helloLabel.regX = helloLabel.getBounds().width * 0.5;
-    helloLabel.regY = helloLabel.getBounds().height * 0.5;
-    helloLabel.x = 320;
-    helloLabel.y = 240;
+    helloLabel = new objects.Label("Hello World", "60px Consolas", "#000000", 320, 240);
     stage.addChild(helloLabel); // add label to the stage
+    goodByeLabel = new objects.Label("Good Bye!", "40px Consolas", "#000000", 320, 340);
+    stage.addChild(goodByeLabel);
 }
 //# sourceMappingURL=game.js.map
